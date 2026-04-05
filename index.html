@@ -24,7 +24,7 @@
       color: #2c2c2c;
     }
 
-    /* ── HEADER ── */
+    /* -- HEADER -- */
     header {
       background-color: var(--verde-escuro);
       padding: 30px 40px;
@@ -59,7 +59,7 @@
       margin-top: 4px;
     }
 
-    /* ── NAV ── */
+    /* -- NAV -- */
     nav {
       background-color: var(--verde-medio);
       padding: 0 20px;
@@ -83,14 +83,14 @@
       background-color: rgba(255,255,255,0.15);
     }
 
-    /* ── MAIN ── */
+    /* -- MAIN -- */
     main {
       max-width: 1400px;
       margin: 0 auto;
       padding: 40px 20px 60px;
     }
 
-    /* ── SECTION ── */
+    /* -- SECTION -- */
     .categoria {
       margin-bottom: 60px;
     }
@@ -119,14 +119,46 @@
       letter-spacing: 1px;
     }
 
-    /* ── GRID ── */
+    /* -- GRID -- */
     .produtos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 20px;
     }
 
-    /* ── CARD ── */
+    /* -- BUSCA -- */
+    .busca-container {
+      background-color: var(--verde-claro);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 140px; /* Ajuste conforme a altura do header + nav */
+      z-index: 90;
+      box-shadow: 0 2px 5px var(--sombra);
+    }
+
+    #campo-busca {
+      width: 100%;
+      max-width: 600px;
+      padding: 12px 20px;
+      border-radius: 25px;
+      border: none;
+      font-size: 1rem;
+      font-family: 'Georgia', serif;
+      outline: none;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .card.hidden {
+      display: none;
+    }
+
+    .categoria.hidden {
+      display: none;
+    }
+
+    /* -- CARD -- */
     .card {
       background: var(--branco);
       border-radius: 12px;
@@ -181,7 +213,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* ── FOOTER ── */
+    /* -- FOOTER -- */
     footer {
       background-color: var(--verde-escuro);
       color: rgba(240,236,228,0.7);
@@ -499,29 +531,33 @@
 </div>
 </header>
 <nav>
-<a href="#gin">Gin</a>
-<a href="#vodka">Vodka</a>
-<a href="#whisky">Whisky</a>
-<a href="#espumante">Espumante</a>
-<a href="#vinho-tinto">Vinho Tinto</a>
-<a href="#vinho-branco">Vinho Branco</a>
-<a href="#vinho-rose">Vinho Rosé</a>
-<a href="#cerveja">Cerveja</a>
-<a href="#energetico">Energético</a>
-<a href="#refrigerante">Refrigerante</a>
-<a href="#licor">Licor</a>
-<a href="#cachaca">Cachaça</a>
-<a href="#tequila">Tequila</a>
-<a href="#agua">Água</a>
-<a href="#sucos">Sucos</a>
-<a href="#outros">Outros</a>
+    <a href="#gin">Gin</a>
+    <a href="#vodka">Vodka</a>
+    <a href="#whisky">Whisky</a>
+    <a href="#espumante">Espumante</a>
+    <a href="#vinho-tinto">Vinho Tinto</a>
+    <a href="#vinho-branco">Vinho Branco</a>
+    <a href="#vinho-rose">Vinho Rosé</a>
+    <a href="#cerveja">Cerveja</a>
+    <a href="#energetico">Energético</a>
+    <a href="#refrigerante">Refrigerante</a>
+    <a href="#licor">Licor</a>
+    <a href="#cachaca">Cachaça</a>
+    <a href="#tequila">Tequila</a>
+    <a href="#agua">Água</a>
+    <a href="#sucos">Sucos</a>
+    <a href="#outros">Outros</a>
+
 </nav>
+<div class="busca-container">
+    <input type="text" id="campo-busca" placeholder="Buscar por nome do produto..." autocomplete="off">
+</div>  
 <main>
-<!-- ═══════════════ GIN ═══════════════ -->
+<!-- --------------- GIN --------------- -->
 <section class="categoria" id="gin">
 <div class="categoria-header">
 <img alt="Gin" class="cat-icon" src="images/gin_tanqueray.png"/>
-<h2>🍸 Gin</h2>
+<h2>Gin</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Tanqueray Bossa 750ml" data-preco="103.87">
@@ -578,11 +614,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ VODKA ═══════════════ -->
+<!-- --------------- VODKA --------------- -->
 <section class="categoria" id="vodka">
 <div class="categoria-header">
 <img alt="Vodka" class="cat-icon" src="images/vodka_greygoose.jpg"/>
-<h2>🥃 Vodka</h2>
+<h2>Vodka</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Vodka Grey Goose Citron 750ml" data-preco="184.59">
@@ -631,11 +667,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ WHISKY ═══════════════ -->
+<!-- --------------- WHISKY --------------- -->
 <section class="categoria" id="whisky">
 <div class="categoria-header">
 <img alt="Whisky" class="cat-icon" src="images/whisky_jackdaniels.jpg"/>
-<h2>🥃 Whisky</h2>
+<h2>Whisky</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Whisky Jack Daniel's No. 7" data-preco="151.97">
@@ -740,11 +776,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ ESPUMANTE ═══════════════ -->
+<!-- --------------- ESPUMANTE --------------- -->
 <section class="categoria" id="espumante">
 <div class="categoria-header">
 <img alt="Espumante" class="cat-icon" src="images/espumante_chandon.png"/>
-<h2>🥂 Espumante / Champagne</h2>/
+<h2>Espumante / Champagne</h2>/
     </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Spumante Chandon 1,5L" data-preco="195.0">
@@ -837,11 +873,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ VINHO TINTO ═══════════════ -->
+<!-- --------------- VINHO TINTO --------------- -->
 <section class="categoria" id="vinho-tinto">
 <div class="categoria-header">
 <img alt="Vinho Tinto" class="cat-icon" src="images/vinho_tinto_malbec.jpg"/>
-<h2>🍷 Vinho Tinto</h2>
+<h2>Vinho Tinto</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Norton Reserva Malbec - Mendoza" data-preco="88.92">
@@ -1039,11 +1075,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ VINHO BRANCO ═══════════════ -->
+<!-- --------------- VINHO BRANCO --------------- -->
 <section class="categoria" id="vinho-branco">
 <div class="categoria-header">
 <img alt="Vinho Branco" class="cat-icon" src="images/vinho_branco.jpg"/>
-<h2>🍾 Vinho Branco</h2>
+<h2>Vinho Branco</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Norton Altura White Blend - Vale de Uco" data-preco="135.89">
@@ -1156,11 +1192,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ VINHO ROSÉ ═══════════════ -->
+<!-- --------------- VINHO ROSÉ --------------- -->
 <section class="categoria" id="vinho-rose">
 <div class="categoria-header">
 <img alt="Vinho Rosé" class="cat-icon" src="images/vinho_branco.jpg"/>
-<h2>🌸 Vinho Rosé</h2>
+<h2>Vinho Rosé</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Sexy Fish Rosé - Mendoza" data-preco="49.57">
@@ -1189,11 +1225,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ CERVEJA ═══════════════ -->
+<!-- --------------- CERVEJA --------------- -->
 <section class="categoria" id="cerveja">
 <div class="categoria-header">
 <img alt="Cerveja" class="cat-icon" src="images/cerveja_heineken.jpg"/>
-<h2>🍺 Cerveja</h2>
+<h2>Cerveja</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Cerveja Heineken - Lata 350ml C12 Descartável" data-preco="5.4">
@@ -1323,11 +1359,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ ENERGÉTICO ═══════════════ -->
+<!-- --------------- ENERGÉTICO --------------- -->
 <section class="categoria" id="energetico">
 <div class="categoria-header">
 <img alt="Energético" class="cat-icon" src="images/energetico_monster.jpg"/>
-<h2>⚡ Energético</h2>
+<h2>Energético</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Monster Energy Lata 473ml" data-preco="8.15">
@@ -1360,11 +1396,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ REFRIGERANTE ═══════════════ -->
+<!-- --------------- REFRIGERANTE --------------- -->
 <section class="categoria" id="refrigerante">
 <div class="categoria-header">
 <img alt="Refrigerante" class="cat-icon" src="images/refrigerante_coca.jpg"/>
-<h2>🥤 Refrigerante</h2>
+<h2>Refrigerante</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Coca-Cola Lata 350 ml" data-preco="3.58">
@@ -1429,11 +1465,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ LICOR ═══════════════ -->
+<!-- --------------- LICOR --------------- -->
 <section class="categoria" id="licor">
 <div class="categoria-header">
 <img alt="Licor" class="cat-icon" src="images/licor_amarula.webp"/>
-<h2>🍯 Licor</h2>
+<h2>Licor</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Amarula 750ml" data-preco="142.87">
@@ -1498,11 +1534,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ CACHAÇA ═══════════════ -->
+<!-- --------------- CACHAÇA --------------- -->
 <section class="categoria" id="cachaca">
 <div class="categoria-header">
 <img alt="Cachaça" class="cat-icon" src="images/cachaca.jpg"/>
-<h2>🌿 Cachaça</h2>
+<h2>Cachaça</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Cachaça Sagatiba" data-preco="51.87">
@@ -1536,11 +1572,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ TEQUILA ═══════════════ -->
+<!-- --------------- TEQUILA --------------- -->
 <section class="categoria" id="tequila">
 <div class="categoria-header">
 <img alt="Tequila" class="cat-icon" src="images/tequila_josecuervo.jpg"/>
-<h2>🌵 Tequila</h2>
+<h2>Tequila</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Jose Cuervo Gold" data-preco="116.87">
@@ -1553,11 +1589,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ ÁGUA ═══════════════ -->
+<!-- --------------- ÁGUA --------------- -->
 <section class="categoria" id="agua">
 <div class="categoria-header">
 <img alt="Água" class="cat-icon" src="images/refrigerante_coca.jpg"/>
-<h2>💧 Água</h2>
+<h2>Água</h2>
 </div>
 <div class="produtos-grid">
 <div class="card" data-nome="Crystal 1,5L Com Gás" data-preco="3.56">
@@ -1582,11 +1618,11 @@
 </div>
 </div>
 </section>
-<!-- ═══════════════ SUCOS ═══════════════ -->
+<!-- --------------- SUCOS --------------- -->
 <section class="categoria" id="sucos">
 <div class="categoria-header">
 <img alt="Sucos" class="cat-icon" src="images/logo.jpeg"/>
-<h2>🍹 Sucos</h2>
+<h2>Sucos</h2>
 </div>
 <div class="produtos-grid">
 <!-- Sucos -->
@@ -1595,11 +1631,11 @@
 <div class="card-body"><h3>Suco Skinka Frutas Cítricas - PET 450ml C12 Descartável</h3><span class="preco"> R$ 3,84 </span></div>
 </div>
 </div></section>
-<!-- ═══════════════ OUTROS ═══════════════ -->
+<!-- --------------- OUTROS --------------- -->
 <section class="categoria" id="outros">
 <div class="categoria-header">
 <img alt="Outros" class="cat-icon" src="images/logo.jpeg"/>
-<h2>🛒 Outros Produtos</h2>
+<h2>Outros Produtos</h2>
 </div>
 <div class="produtos-grid">
 <!-- Absinto -->
@@ -1628,7 +1664,7 @@
 </main>
 <footer>
 <img alt="Logo" class="logo-footer" src="images/logo.jpeg"/>
-<p>Catálogo de Bebidas — Todos os preços em Reais (R$)</p>
+<p>Catálogo de Bebidas  Todos os preços em Reais (R$)</p>
 <p style="margin-top:6px; font-size:0.78rem;">Preços sujeitos a alteração sem aviso prévio.</p>
 </footer>
 <style>
@@ -2098,7 +2134,7 @@
 <!-- Overlay do Relatório -->
 <div id="relatorio-overlay">
 <div class="relatorio-header-mobile no-print">
-<button class="btn-rel-mobile btn-whatsapp" onclick="window.enviarWhatsApp()">✅ Enviar Pedido via WhatsApp</button>
+<button class="btn-rel-mobile btn-whatsapp" onclick="window.enviarWhatsApp()">? Enviar Pedido via WhatsApp</button>
 <div style="display: flex; gap: 10px;">
 <button class="btn-rel-mobile" onclick="document.getElementById(\'relatorio-overlay\').style.display=\'none\'" style="background:#666;">Voltar</button>
 <button class="btn-rel-mobile" onclick="window.print()" style="background:#3d4f45;">Imprimir</button>
@@ -2150,7 +2186,7 @@
         const btnRelatorio = document.getElementById(\'btn-relatorio\');
         const btnLimpar = document.getElementById(\'btn-limpar\');
         if (btnRelatorio) {
-            btnRelatorio.innerHTML = `📋 Relatório (${totalItens})`;
+            btnRelatorio.innerHTML = `?? Relatório (${totalItens})`;
             btnRelatorio.style.display = totalItens > 0 ? \'block\' : \'none\';
         }
         if (btnLimpar) {
@@ -2277,7 +2313,7 @@
             const precoNum = parseFloat(precoLimpo) || 0;
             const subtotal = precoNum * item.qtd;
             totalGeral += subtotal;
-            msg += `• ${item.qtd}x ${item.nome} (${item.preco})\n`;
+            msg += ` ${item.qtd}x ${item.nome} (${item.preco})\n`;
         });
 
         msg += `\n*TOTAL ESTIMADO: R$ ${totalGeral.toLocaleString(\'pt-BR\', {minimumFractionDigits: 2})}*`;
@@ -2334,7 +2370,7 @@
         });
         if (!document.getElementById(\'btn-relatorio\')) {
             const b1 = document.createElement(\'button\'); b1.id = \'btn-relatorio\'; b1.onclick = window.abrirModal; document.body.appendChild(b1);
-            const b2 = document.createElement(\'button\'); b2.id = \'btn-limpar\'; b2.innerHTML = \'🗑️ Limpar\'; b2.onclick = window.limparPedido; document.body.appendChild(b2);
+            const b2 = document.createElement(\'button\'); b2.id = \'btn-limpar\'; b2.innerHTML = \'??? Limpar\'; b2.onclick = window.limparPedido; document.body.appendChild(b2);
         }
         window.atualizarContador();
     }
@@ -2357,8 +2393,8 @@
 })();
 </script>
 <div class="floating-buttons">
-<button id="clear-order-button">🗑️ Limpar Tudo</button>
-<button id="generate-report-button">📋 Gerar Relatório</button>
+<button id="clear-order-button">??? Limpar Tudo</button>
+<button id="generate-report-button">?? Gerar Relatório</button>
 </div>
 <div class="order-modal-overlay">
 <div class="order-modal-content">
@@ -2380,10 +2416,10 @@
 <div class="report-overlay">
 <div class="report-content">
 <div class="report-buttons">
-<button id="print-report-button">🖨️ Imprimir / PDF</button>
-<button class="csv-button" id="download-csv-button">📥 Baixar CSV (Excel)</button>
-<button class="whatsapp-button" id="send-whatsapp-button">💬 Enviar via WhatsApp</button>
-<button class="back-button" id="back-to-catalog-button">↩️ Voltar</button>
+<button id="print-report-button">??? Imprimir / PDF</button>
+<button class="csv-button" id="download-csv-button">?? Baixar CSV (Excel)</button>
+<button class="whatsapp-button" id="send-whatsapp-button">?? Enviar via WhatsApp</button>
+<button class="back-button" id="back-to-catalog-button">?? Voltar</button>
 </div>
 <div id="report-details-container"></div>
 </div>
@@ -2764,6 +2800,34 @@
 
   document.getElementById('back-to-catalog-button').addEventListener('click', () => {
     document.querySelector('.report-overlay').classList.remove('active');
+  });
+
+  // Lógica de Busca de Produtos
+  document.getElementById('campo-busca').addEventListener('input', function(e) {
+    const termo = e.target.value.toLowerCase().trim();
+    const categorias = document.querySelectorAll('.categoria');
+    
+    categorias.forEach(categoria => {
+      const cards = categoria.querySelectorAll('.card');
+      let temProdutoVisivel = false;
+      
+      cards.forEach(card => {
+        const nomeProduto = card.dataset.nome.toLowerCase();
+        if (nomeProduto.includes(termo)) {
+          card.classList.remove('hidden');
+          temProdutoVisivel = true;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      
+      // Esconde a categoria inteira se não houver produtos visíveis nela
+      if (temProdutoVisivel) {
+        categoria.classList.remove('hidden');
+      } else {
+        categoria.classList.add('hidden');
+      }
+    });
   });
 
 
